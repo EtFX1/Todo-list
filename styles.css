@@ -1,0 +1,142 @@
+*,
+::before {
+    margin: 0;
+    padding: 0;
+    font-family: dkCrayonCrumble;
+    color: white;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: dkCrayonCrumble;
+    src: url("./fonts/dk-crayon-crumble-font/DkCrayonCrumble-ddll.ttf");
+}
+
+.display-none {
+    display: none;
+}
+
+body {
+    background-image: url("./images/background-img.jpg");
+    background-position: center; /*? If you only specify one keyword, the other value will be "center"*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-cont {
+    position: relative;
+    width: clamp(16.75rem, 70%, 22.5rem);
+}
+
+.board-img {
+    width: 100%;
+}
+
+.header-and-tasks-cont {
+    position: absolute;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    top: 8.75%;
+}
+
+header {
+    margin-bottom: 5%;
+}
+
+.heading {
+    font-size: clamp(1.75rem, 5.634vw + 0.436rem, 2.313rem);
+}
+
+.no-task-yet-img {
+    margin: 0 auto 0.625rem;
+    width: 60%;
+}
+
+.no-tasks-text {
+    font-size: clamp(1.5rem, 3.756vw + 0.749rem, 2rem);
+}
+
+.tasks-cont > .single-task-cont {
+    line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
+}
+
+.checkbox {
+    position: absolute;
+    z-index: 0;
+    width: 1.25rem;
+    height: 1.4em;
+    opacity: 0;
+}
+
+.checkbox + .text-cont {
+    cursor: pointer;
+    display: inline-flex; /*todo: figure out what that is*/
+    align-items: center;
+}
+
+.text-input {
+    border: none;
+    background-color: transparent;
+    font-size: clamp(1rem, 3.756vw + 0.249rem, 1.5rem);
+    padding-top: 0.1875rem;
+}
+
+.text-input:focus {
+    border: none;
+    outline: none;
+}
+
+.checkbox + .text-cont::before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 0.15rem solid white;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.checkbox:checked + .text-cont::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.75 5.33333L0 8L8.25 16L22 2.66667L19.25 0L8.25 10.6667L2.75 5.33333Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.btns-cont {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    top: 81%;
+}
+
+.add-btn,
+.delete-btn {
+    border: 0.1rem solid;
+    width: clamp(1.5rem, 6.25vw, 1.75rem);
+    height: clamp(1.5rem, 6.25vw, 1.75rem);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.add-btn {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.19382 0.784424V7.19382H0.784424L0.784424 11.4667H7.19382L7.19382 17.8761H11.4667V11.4667H17.8761V7.19382L11.4667 7.19382V0.784424L7.19382 0.784424Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.delete-btn {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0909 0C9.59891 0 7.59691 1.75007 7.59691 3.86585V4.33591H2.54545C1.84418 4.33591 1.27273 4.81887 1.27273 5.41155V6.48719H0V8.63847H2.54545V24.7731C2.54545 26.5425 4.27 28 6.36364 28H21.6364C23.73 28 25.4545 26.5425 25.4545 24.7731V8.63847H28V6.48719H26.7273V5.41155C26.7273 4.81887 26.1558 4.33591 25.4545 4.33591H20.4031V3.86478C20.4031 1.75007 18.4011 0 15.9091 0H12.0909ZM12.0909 2.21797H15.9091C16.9324 2.21797 17.7787 2.92359 17.7787 3.86478V4.33591H10.22V3.86478C10.22 2.92359 11.0664 2.21905 12.0896 2.21905L12.0909 2.21797ZM5.09091 8.63847H11.6136C11.7715 8.65245 11.928 8.67182 12.0909 8.67182H15.9091C16.072 8.67182 16.2273 8.65245 16.3864 8.63847H22.9091V24.7731C22.9091 25.3787 22.3529 25.8487 21.6364 25.8487H6.36364C5.64709 25.8487 5.09091 25.3787 5.09091 24.7731V8.63847ZM7.63636 10.7898V23.6974H10.1818V10.7898H7.63636ZM12.7273 10.7898V23.6974H15.2727V10.7898H12.7273ZM17.8182 10.7898V23.6974H20.3636V10.7898H17.8182Z' fill='white'/%3E%3C/svg%3E%0A");
+    margin-left: 0.5rem;
+    margin-right: 13.75%;
+}

@@ -9,28 +9,38 @@
     </head>
     <body>
         <main>
-            <!-- !Background image -->
+            <!-- @!Background image -->
             <article class="board-cont">
+                <!-- !board container -->
                 <img
                     class="board-img"
                     src="./images/board-mobile.png"
                     alt="blackboard"
                 />
 
-                <div class="app-cont">
-                    <!-- !header -->
+                <!-- !header and tasks cont -->
+                <div class="header-and-tasks-cont">
+                    <!-- header -->
                     <header>
                         <h1 class="heading">TASKS DONE: 5/10</h1>
                     </header>
 
-                    <!-- !tasks container -->
-                    <div class="tasks-and-btns-cont">
-                        <!-- !img header -->
-                        <img
-                            class="no-task-yet-img"
-                            src="./images/no-task-yet.png"
-                            alt="no task yet"
-                        />
+                    <!-- tasks / image container -->
+                    <div class="tasks-or-img-cont">
+                        <!-- img and text container -->
+                        <div class="no-task-img-and-text display-none">
+                            <!-- image -->
+                            <img
+                                class="no-task-yet-img"
+                                src="./images/no-task-yet.png"
+                                alt="no task yet"
+                            />
+
+                            <!-- text -->
+                            <p class="no-tasks-text">NO TASKS YET!</p>
+                        </div>
+
+                        <!-- tasks container (maximum 8 tasks) -->
                         <div class="tasks-cont">
                             <!-- !Single Task-->
                             <ul class="single-task-cont">
@@ -178,12 +188,12 @@
                             </ul>
                         </div>
                     </div>
+                </div>
 
-                    <!-- !action buttons -->
-                    <div class="btns-cont">
-                        <div class="add-btn"></div>
-                        <div class="delete-btn"></div>
-                    </div>
+                <!-- !action buttons -->
+                <div class="btns-cont">
+                    <div class="add-btn"></div>
+                    <div class="delete-btn"></div>
                 </div>
             </article>
         </main>
