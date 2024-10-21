@@ -67,6 +67,7 @@ header {
 }
 
 .tasks-cont > .single-task-cont {
+    list-style-type: none;
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
 }
 
@@ -129,6 +130,7 @@ header {
     height: clamp(1.5rem, 6.25vw, 1.75rem);
     background-repeat: no-repeat;
     background-position: center;
+    background-color: transparent;
 }
 
 .add-btn {

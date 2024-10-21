@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="./styles.css" />
-        <link rel="stylesheet" href="./images/favicon.png" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script defer src="./index.js"></script>
     </head>
     <body>
         <main>
@@ -28,7 +29,7 @@
                     <!-- tasks / image container -->
                     <div class="tasks-or-img-cont">
                         <!-- img and text container -->
-                        <div class="no-task-img-and-text display-none">
+                        <div class="img-and-text-cont">
                             <!-- image -->
                             <img
                                 class="no-task-yet-img"
@@ -41,9 +42,9 @@
                         </div>
 
                         <!-- tasks container (maximum 8 tasks) -->
-                        <div class="tasks-cont">
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
+                        <ul class="tasks-cont display-none">
+                            <!-- Single Task-->
+                            <li class="single-task-cont">
                                 <input
                                     class="checkbox"
                                     id="myCheckbox"
@@ -59,141 +60,16 @@
                                         maxlength="24"
                                     />
                                 </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                            <!-- !Single Task-->
-                            <ul class="single-task-cont">
-                                <input
-                                    class="checkbox"
-                                    id="myCheckbox"
-                                    type="checkbox"
-                                    name="task1"
-                                />
-                                <!-- <label for="myCheckbox">Checkbox</label> -->
-                                <div class="text-cont">
-                                    <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
-                                    />
-                                </div>
-                            </ul>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- !action buttons -->
                 <div class="btns-cont">
-                    <div class="add-btn"></div>
-                    <div class="delete-btn"></div>
+                    <!-- todo: style this! -->
+                    <button class="add-btn"></button>
+                    <button class="delete-btn"></button>
                 </div>
             </article>
         </main>
