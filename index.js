@@ -8,8 +8,11 @@ const listOfTextInputClasses = document.getElementsByClassName("text-input"); //
 let tasksAdded = 0;
 let addBtnClicks = 0;
 
+//? extracts the last input textbox from the a list
+const getLastTextInputBoxFromClassList = () => listOfTextInputClasses[listOfTextInputClasses.length - 1]; //the last index of listOfTextInputClasses
 
-addBtn.addEventListener("click", function () {
+
+function checkWhetherNewTaskCanBeAdded() {
     addBtnClicks += 1;
 
     if (addBtnClicks === 1) {
@@ -21,10 +24,19 @@ addBtn.addEventListener("click", function () {
             addNewTask();
         }
     }
+}
+
+addBtn.addEventListener("click", checkWhetherNewTaskCanBeAdded);
+
+tasksCont.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (event.target.tagName === "INPUT") {
+            checkWhetherNewTaskCanBeAdded();
+        }
+    }
 });
 
-//? extracts the last input textbox from the a list
-const getLastTextInputBoxFromClassList = () => listOfTextInputClasses[listOfTextInputClasses.length - 1]; //the last index of listOfTextInputClasses
+
 
 function displayTasksCont() {
     tasksCont.classList.toggle("display-none"); //display the tasks container
@@ -41,13 +53,13 @@ function addNewTask() {
 
     //?checks whether the board is full (i.e has 8 tasks) before it adds new input textbox
 
-    if (tasksAdded === 3) {
+    if (tasksAdded === 8) {
         alert("Sorry you can't add more than 8 tasks!");
     } else {
         const clonedListElem = newTaskElem.cloneNode(true); //clones the list element
         tasksCont.append(clonedListElem); //adding the cloned list element to the tasks container
-        getLastTextInputBoxFromClassList().value = ""; //clearing the input of the next element
-
+        getLastTextInputBoxFromClassList().value = ""; //clearing the input of the next input element
+        getLastTextInputBoxFromClassList().focus(); //switching the focus to the next input element
     }
 }
 
