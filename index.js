@@ -9,32 +9,14 @@ const listOfCheckboxClasses = document.getElementsByClassName("checkbox");
 let tasksAdded = 0;
 let addBtnClicks = 0;
 
-//? extracts the last input textbox from the a list
+//? gets the last textbox on the page
 const getLastTextInputBoxFromClassList = () => listOfTextInputClasses[listOfTextInputClasses.length - 1]; //the last index of listOfTextInputClasses
-
-const getLastCheckboxFromClassList = () => listOfCheckboxClasses[listOfCheckboxClasses.length - 1]; //the last index of listOfTextInputClasses
 
 addBtn.addEventListener("click", checkWhetherNewTaskCanBeAdded);
 
-tasksCont.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        if (event.target.tagName === "INPUT") {
-            checkWhetherNewTaskCanBeAdded();
-        }
-    }
-});
+tasksCont.addEventListener("keydown", handleEnterKey);
 
-tasksCont.addEventListener("change", function (event) {
-
-    if (event.target.id === "check") {
-        const textbox = event.target.nextElementSibling.firstElementChild; //the textbox next to the check
-        if (textbox.value === "") {
-            alert("You cannot tick off an empty item!");
-            event.target.checked = false;
-        }
-    }
-
-});
+tasksCont.addEventListener("change", checkWhetherTaskCanBeTicked);
 
 
 function displayTasksCont() {
@@ -60,6 +42,24 @@ function checkWhetherNewTaskCanBeAdded() {
     }
 }
 
+function handleEnterKey(event) {
+    if (event.key === "Enter") {
+        if (event.target.tagName === "INPUT") {
+            checkWhetherNewTaskCanBeAdded();
+        }
+    }
+}
+
+function checkWhetherTaskCanBeTicked(event) {
+    if (event.target.id === "check") {
+        const textbox = event.target.nextElementSibling.firstElementChild; //the textbox next to the check
+        if (textbox.value === "") {
+            alert("You cannot tick off an empty item!");
+            event.target.checked = false;
+        }
+    }
+}
+
 function addNewTask() {
     tasksAdded += 1;
 
@@ -81,6 +81,7 @@ function addNewTask() {
 
     }
 }
+
 
 
 
