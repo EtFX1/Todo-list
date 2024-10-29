@@ -4,6 +4,7 @@ const imgCont = document.querySelector(".img-and-text-cont");
 const textInput = document.querySelector(".text-input");
 const newTaskElem = document.querySelector(".single-task-cont");
 const listOfTextInputClasses = document.getElementsByClassName("text-input"); //HTML collection of the elements with "text-input" class-name
+const listOfCheckboxClasses = document.getElementsByClassName("checkbox");
 
 let tasksAdded = 0;
 let addBtnClicks = 0;
@@ -11,20 +12,7 @@ let addBtnClicks = 0;
 //? extracts the last input textbox from the a list
 const getLastTextInputBoxFromClassList = () => listOfTextInputClasses[listOfTextInputClasses.length - 1]; //the last index of listOfTextInputClasses
 
-
-function checkWhetherNewTaskCanBeAdded() {
-    addBtnClicks += 1;
-
-    if (addBtnClicks === 1) {
-        displayTasksCont();
-    } if (addBtnClicks > 1) {
-        if (getLastTextInputBoxFromClassList().value === "") {
-            alert("You must add something to the previous task first!");
-        } else {
-            addNewTask();
-        }
-    }
-}
+const getLastCheckboxFromClassList = () => listOfCheckboxClasses[listOfCheckboxClasses.length - 1]; //the last index of listOfTextInputClasses
 
 addBtn.addEventListener("click", checkWhetherNewTaskCanBeAdded);
 
@@ -36,6 +24,17 @@ tasksCont.addEventListener("keydown", function (event) {
     }
 });
 
+tasksCont.addEventListener("change", function (event) {
+
+    if (event.target.id === "check") {
+        const textbox = event.target.nextElementSibling.firstElementChild; //the textbox next to the check
+        if (textbox.value === "") {
+            alert("You cannot tick off an empty item!");
+            event.target.checked = false;
+        }
+    }
+
+});
 
 
 function displayTasksCont() {
@@ -48,6 +47,19 @@ function displayImageCont() {
     img.classList.toggle("display-none"); //display the image container
 }
 
+function checkWhetherNewTaskCanBeAdded() {
+    addBtnClicks += 1;
+    if (addBtnClicks === 1) {
+        displayTasksCont();
+    } if (addBtnClicks > 1) {
+        if (getLastTextInputBoxFromClassList().value === "") {
+            alert("You must add something to the previous task first!");
+        } else {
+            addNewTask();
+        }
+    }
+}
+
 function addNewTask() {
     tasksAdded += 1;
 
@@ -56,10 +68,17 @@ function addNewTask() {
     if (tasksAdded === 8) {
         alert("Sorry you can't add more than 8 tasks!");
     } else {
-        const clonedListElem = newTaskElem.cloneNode(true); //clones the list element
-        tasksCont.append(clonedListElem); //adding the cloned list element to the tasks container
+        const clonedListElem = newTaskElem.cloneNode(true); //clones the LIST element
+
+        //*adding the cloned element to the DOM
+        tasksCont.append(clonedListElem);
+
+        //*doing certain things to the cloned element 
+        clonedListElem.firstElementChild.checked = false;
+
         getLastTextInputBoxFromClassList().value = ""; //clearing the input of the next input element
         getLastTextInputBoxFromClassList().focus(); //switching the focus to the next input element
+
     }
 }
 
