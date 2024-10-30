@@ -53,14 +53,14 @@ main {
     width: 100%;
 }
 
-.header-and-tasks-cont {
+.all-content-cont {
     position: absolute;
     width: fit-content;
     text-align: center;
     margin: 0 auto;
     right: 0;
     left: 0;
-    top: 8.75%;
+    top: 17.5%;
 }
 
 header {
@@ -85,6 +85,7 @@ header {
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
 }
 
+/* *? remove fake checkbox */
 .checkbox {
     position: absolute;
     z-index: 0;
@@ -93,24 +94,14 @@ header {
     opacity: 0;
 }
 
+/* *?align items vertically inside of the text container */
 .checkbox + .text-cont {
     cursor: pointer;
     display: inline-flex; /*todo: figure out what that is*/
     align-items: center;
 }
 
-.text-input {
-    border: none;
-    background-color: transparent;
-    font-size: clamp(1rem, 3.756vw + 0.249rem, 1.5rem);
-    padding-top: 0.1875rem;
-}
-
-.text-input:focus {
-    border: none;
-    outline: none;
-}
-
+/* ?create a fake checkbox next to input textbox to replace the default one */
 .checkbox + .text-cont::before {
     content: "";
     display: inline-block;
@@ -127,6 +118,18 @@ header {
 
 .checkbox:checked + .text-cont::before {
     background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.75 5.33333L0 8L8.25 16L22 2.66667L19.25 0L8.25 10.6667L2.75 5.33333Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.text-input {
+    border: none;
+    background-color: transparent;
+    font-size: clamp(1rem, 3.756vw + 0.249rem, 1.5rem);
+    padding-top: 0.1875rem;
+}
+
+.text-input:focus {
+    border: none;
+    outline: none;
 }
 
 .btns-cont {

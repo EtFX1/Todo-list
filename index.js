@@ -1,10 +1,11 @@
 const addBtn = document.querySelector(".add-btn");
-const tasksCont = document.querySelector(".tasks-cont");
 const imgCont = document.querySelector(".img-and-text-cont");
+const contentCont = document.querySelector(".all-content-cont");
+const headerAndTasksCont = document.querySelector(".header-and-tasks-cont");
+const tasksCont = document.querySelector(".tasks-cont");
 const textInput = document.querySelector(".text-input");
 const newTaskElem = document.querySelector(".single-task-cont");
 const listOfTextInputClasses = document.getElementsByClassName("text-input"); //HTML collection of the elements with "text-input" class-name
-const listOfCheckboxClasses = document.getElementsByClassName("checkbox");
 
 let tasksAdded = 0;
 let addBtnClicks = 0;
@@ -20,7 +21,8 @@ tasksCont.addEventListener("change", checkWhetherTaskCanBeTicked);
 
 
 function displayTasksCont() {
-    tasksCont.classList.toggle("display-none"); //display the tasks container
+    headerAndTasksCont.classList.toggle("display-none"); //display the tasks container
+    contentCont.style.top = "10%";
     imgCont.classList.toggle("display-none"); //remove the image container
 }
 

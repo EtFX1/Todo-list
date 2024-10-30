@@ -19,16 +19,11 @@
                     alt="blackboard"
                 />
 
-                <!-- !header and tasks cont -->
-                <div class="header-and-tasks-cont">
-                    <!-- header -->
-                    <header>
-                        <h1 class="heading">TASKS DONE: 2/8</h1>
-                    </header>
-
+                <!-- !all content on the board (except the buttons) -->
+                <div class="all-content-cont">
                     <!-- tasks / image container -->
                     <div class="tasks-or-img-cont">
-                        <!-- img and text container -->
+                        <!-- *img and text container -->
                         <div class="img-and-text-cont">
                             <!-- image -->
                             <img
@@ -41,29 +36,38 @@
                             <p class="no-tasks-text">NO TASKS YET!</p>
                         </div>
 
-                        <!-- tasks container (maximum 8 tasks) -->
-                        <ul class="tasks-cont display-none">
-                            <!-- Single Task-->
-                            <li class="single-task-cont">
-                                <!-- checkbox -->
-                                <input
-                                    class="checkbox"
-                                    id="check"
-                                    type="checkbox"
-                                    name="task1"
-                                />
+                        <!-- *header and tasks container -->
 
-                                <!-- text box -->
-                                <div class="text-cont">
+                        <div class="header-and-tasks-cont display-none">
+                            <!-- header -->
+                            <header>
+                                <h1 class="heading">TASKS DONE: 2/8</h1>
+                            </header>
+
+                            <!-- tasks container (maximum 8 tasks) -->
+                            <ul class="tasks-cont">
+                                <!-- Single Task-->
+                                <li class="single-task-cont">
+                                    <!-- checkbox -->
                                     <input
-                                        class="text-input"
-                                        type="text"
-                                        placeholder="What do you wanna do?"
-                                        maxlength="24"
+                                        class="checkbox"
+                                        id="check"
+                                        type="checkbox"
+                                        name="task1"
                                     />
-                                </div>
-                            </li>
-                        </ul>
+
+                                    <!-- text box -->
+                                    <div class="text-cont">
+                                        <input
+                                            class="text-input"
+                                            type="text"
+                                            placeholder="What do you wanna do?"
+                                            maxlength="24"
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
