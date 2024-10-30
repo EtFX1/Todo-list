@@ -2,13 +2,15 @@ const addBtn = document.querySelector(".add-btn");
 const imgCont = document.querySelector(".img-and-text-cont");
 const contentCont = document.querySelector(".all-content-cont");
 const headerAndTasksCont = document.querySelector(".header-and-tasks-cont");
+const tasksCheckedElem = document.querySelector(".tasks-checked");
 const tasksCont = document.querySelector(".tasks-cont");
 const textInput = document.querySelector(".text-input");
 const newTaskElem = document.querySelector(".single-task-cont");
 const listOfTextInputClasses = document.getElementsByClassName("text-input"); //HTML collection of the elements with "text-input" class-name
 
-let tasksAdded = 0;
 let addBtnClicks = 0;
+let tasksAdded = 0;
+let tasksChecked = 0;
 
 //? gets the last textbox on the page
 const getLastTextInputBoxFromClassList = () => listOfTextInputClasses[listOfTextInputClasses.length - 1]; //the last index of listOfTextInputClasses
@@ -17,7 +19,7 @@ addBtn.addEventListener("click", checkWhetherNewTaskCanBeAdded);
 
 tasksCont.addEventListener("keydown", handleEnterKey);
 
-tasksCont.addEventListener("change", checkWhetherTaskCanBeTicked);
+tasksCont.addEventListener("change", trackCheckedTasks);
 
 
 function displayTasksCont() {
@@ -52,14 +54,22 @@ function handleEnterKey(event) {
     }
 }
 
-function checkWhetherTaskCanBeTicked(event) {
+function trackCheckedTasks(event) {
     if (event.target.id === "check") {
         const textbox = event.target.nextElementSibling.firstElementChild; //the textbox next to the check
         if (textbox.value === "") {
             alert("You cannot tick off an empty item!");
             event.target.checked = false;
+        } else if (event.target.checked) {
+            tasksChecked += 1;
+        } else {
+            tasksChecked -= 1;
         }
+
+        tasksCheckedElem.innerText = tasksChecked;
     }
+
+
 }
 
 function addNewTask() {
