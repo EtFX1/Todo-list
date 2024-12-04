@@ -1,15 +1,7 @@
-*,
-::before,
-::after {
-    margin: 0;
-    padding: 0;
+* {
     font-family: dkCrayonCrumble;
-    color: white;
     box-sizing: border-box;
-    /* letter-spacing: 5px; */
-}
-
-body {
+    color: white;
     letter-spacing: 1.75px;
 }
 
@@ -58,9 +50,15 @@ main {
     width: fit-content;
     text-align: center;
     margin: 0 auto;
-    right: 0;
-    left: 0;
-    top: 17.5%;
+    inset: 0;
+}
+
+.img-and-text-cont {
+    margin-top: 25%;
+}
+
+.header-and-tasks-cont {
+    margin-top: 20%;
 }
 
 header {
@@ -80,6 +78,10 @@ header {
     font-size: clamp(1.5rem, 3.756vw + 0.749rem, 2rem);
 }
 
+.tasks-cont {
+    padding: 0;
+}
+
 .tasks-cont > .single-task-cont {
     list-style-type: none;
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
@@ -96,7 +98,7 @@ header {
 
 /* *?align items vertically inside of the text container */
 .checkbox + .text-cont {
-    cursor: pointer;
+    /* cursor: pointer; */
     display: inline-flex; /*todo: figure out what that is*/
     align-items: center;
 }
@@ -142,6 +144,7 @@ header {
 
 .add-btn,
 .delete-btn {
+    color: white;
     border: 0.1rem solid;
     width: clamp(1.5rem, 6.25vw, 1.75rem);
     height: clamp(1.5rem, 6.25vw, 1.75rem);
@@ -158,4 +161,61 @@ header {
     background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0909 0C9.59891 0 7.59691 1.75007 7.59691 3.86585V4.33591H2.54545C1.84418 4.33591 1.27273 4.81887 1.27273 5.41155V6.48719H0V8.63847H2.54545V24.7731C2.54545 26.5425 4.27 28 6.36364 28H21.6364C23.73 28 25.4545 26.5425 25.4545 24.7731V8.63847H28V6.48719H26.7273V5.41155C26.7273 4.81887 26.1558 4.33591 25.4545 4.33591H20.4031V3.86478C20.4031 1.75007 18.4011 0 15.9091 0H12.0909ZM12.0909 2.21797H15.9091C16.9324 2.21797 17.7787 2.92359 17.7787 3.86478V4.33591H10.22V3.86478C10.22 2.92359 11.0664 2.21905 12.0896 2.21905L12.0909 2.21797ZM5.09091 8.63847H11.6136C11.7715 8.65245 11.928 8.67182 12.0909 8.67182H15.9091C16.072 8.67182 16.2273 8.65245 16.3864 8.63847H22.9091V24.7731C22.9091 25.3787 22.3529 25.8487 21.6364 25.8487H6.36364C5.64709 25.8487 5.09091 25.3787 5.09091 24.7731V8.63847ZM7.63636 10.7898V23.6974H10.1818V10.7898H7.63636ZM12.7273 10.7898V23.6974H15.2727V10.7898H12.7273ZM17.8182 10.7898V23.6974H20.3636V10.7898H17.8182Z' fill='white'/%3E%3C/svg%3E%0A");
     margin-left: 0.5rem;
     margin-right: 13.75%;
+}
+
+.dialog {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 15px;
+    width: clamp(200px, 60%, 400px);
+    font-size: 24px;
+    border: 3px solid;
+}
+
+.dialog-cont,
+.dialog-btns-cont {
+    margin: 0 auto;
+}
+
+.dialog-cont {
+    padding-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.dialog-btns-cont {
+    width: fit-content;
+}
+
+.dialog::backdrop {
+    backdrop-filter: blur(12px);
+}
+
+.no-btn,
+.yes-btn {
+    height: 32px;
+    width: 32px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 8px;
+    border-color: white;
+    border-style: solid;
+}
+
+.no-btn:hover {
+    background-color: #e70606;
+}
+
+.yes-btn:hover {
+    background-color: #008000;
+}
+
+.no-btn {
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M13.0583 9.5L18.9832 15.4249L15.4249 18.9832L9.5 13.0583L3.5583 19L0 15.4417L5.9417 9.5L0 3.5583L3.5583 0L9.5 5.9417L15.4417 0.016784L19 3.57509L13.0583 9.5Z' fill='white' /%3E%3C/svg%3E");
+}
+
+.yes-btn {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='20' viewBox='0 0 22 20' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M7.22377 19.2545L0.00176553 11.5622L3.29188 8.05563L7.2227 12.2548L18.709 0.000560275L22.0002 3.50609L7.22377 19.2545Z' fill='white' /%3E%3C/svg%3E");
 }
