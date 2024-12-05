@@ -2,7 +2,7 @@
     font-family: dkCrayonCrumble;
     box-sizing: border-box;
     color: white;
-    letter-spacing: 1.75px;
+    letter-spacing: 0.1094rem;
 }
 
 .text-input::placeholder {
@@ -10,7 +10,7 @@
 }
 
 .text-input {
-    letter-spacing: 1.25px;
+    letter-spacing: 0.0781rem;
 }
 
 @font-face {
@@ -166,10 +166,10 @@ header {
 .dialog {
     padding: 0;
     background-color: transparent;
-    border-radius: 15px;
-    width: clamp(200px, 60%, 400px);
-    font-size: 24px;
-    border: 3px solid;
+    border-radius: 0.9375rem;
+    width: clamp(12.5rem, 60%, 25rem);
+    font-size: 1.5rem;
+    border: 0.1875rem solid;
 }
 
 .dialog-cont,
@@ -178,7 +178,7 @@ header {
 }
 
 .dialog-cont {
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     width: 80%;
     text-align: center;
 }
@@ -188,18 +188,18 @@ header {
 }
 
 .dialog::backdrop {
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(0.75rem);
 }
 
 .no-btn,
 .yes-btn {
-    height: 32px;
-    width: 32px;
+    height: 2rem;
+    width: 2rem;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: transparent;
-    border: 2.5px solid white;
-    border-radius: 8px;
+    border: 0.1563rem solid white;
+    border-radius: 0.5rem;
     border-color: white;
     border-style: solid;
 }
