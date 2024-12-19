@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: dkCrayonCrumble;
-    src: url("./fonts/dk-crayon-crumble-font/DkCrayonCrumble-ddll.ttf");
+    src: url("./assets/fonts/dk-crayon-crumble-font/DkCrayonCrumble-ddll.ttf");
 }
 
 .display-none {
@@ -23,7 +23,7 @@
 }
 
 body {
-    background-image: url("./images/background-img.jpg");
+    background-image: url("./assets/images/background-img.jpg");
     background-position: center; /*? If you only specify one keyword, the other value will be "center"*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -100,7 +100,6 @@ header {
 
 /* *?align items vertically inside of the text container */
 .checkbox + .text-cont {
-    /* cursor: pointer; */
     display: inline-flex; /*todo: figure out what that is*/
     align-items: center;
 }
@@ -137,8 +136,8 @@ header {
 }
 
 /*initially off*/
-.text-input-red-border {
-    border: 2px dashed red;
+.red-border {
+    border: 0.125rem dashed red;
 }
 
 .btns-cont {
@@ -149,25 +148,36 @@ header {
     top: 81%;
 }
 
-svg {
-    margin-top: 4.5px;
-    /* border: 0.5px solid white; */
-}
-
 .add-btn,
 .delete-btn {
     padding: 0;
     color: white;
-    fill: white; /*styles svg element*/
     border: 0.1rem solid;
     width: clamp(1.5rem, 6.25vw, 1.75rem);
     height: clamp(1.5rem, 6.25vw, 1.75rem);
     background-color: transparent;
 }
 
+.add-icon,
+.delete-icon {
+    fill: white;
+}
+
+/* both svg icons for add and delete btns */
+.add-icon {
+    margin-top: 0.2813rem;
+}
+
+.delete-icon {
+    margin-top: 0.1875rem;
+}
+
 /* a toggle class that's initially off */
 .delete-btn-grey {
     color: grey;
+}
+
+.delete-icon-grey {
     fill: grey;
 }
 
