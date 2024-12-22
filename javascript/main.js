@@ -2,7 +2,6 @@ import { tasksCont } from "./utils.js"
 
 import {
     showTasksOrAddTask,
-    handleEnterKey
 } from "./features/add-tasks.js";
 
 import { handleTaskTracking } from "./features/track-tasks.js";
