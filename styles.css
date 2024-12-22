@@ -190,7 +190,6 @@ header {
 }
 
 .btns-cont {
-    border: 2px solid;
     margin-top: clamp(0.25rem, 6.154vw + -0.981rem, 1rem);
     display: flex;
     justify-content: end;
@@ -207,8 +206,16 @@ header {
     background-color: transparent;
 }
 
+.add-btn:hover {
+    background-color: rgb(24, 132, 24);
+}
+
 .delete-btn {
     margin-left: 12px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(238, 62, 62);
 }
 
 .add-icon,
