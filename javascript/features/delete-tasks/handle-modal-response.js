@@ -1,4 +1,4 @@
-import { tasksChecked, tasksCheckedElem } from "../track-tasks.js";
+import { tasksChecked, tasksCheckedElem } from "../track-tasks/track-checked-tasks.js";
 import { deleteATask } from "./delete-the-task.js";
 import { toggleDisabledOnCheckboxes, toggleDisabledOnDeleteBtn, toggleRedBorders } from "./toggle-functions.js"
 

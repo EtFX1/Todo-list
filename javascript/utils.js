@@ -1,7 +1,8 @@
-//!DO NOT IMPORT ANYTHING IN HERE. ONLY EXPORTS ARE ALLOWED
-
 export const tasksCont = document.querySelector(".tasks-cont");
 export const listOfTextInputClasses = document.getElementsByClassName("text-input"); //HTML collection of the elements with "text-input" class-name
+export const allTextBoxes = () => document.querySelectorAll(".text-input"); //returns 
+//? made into a function because the code inside needs to be run locally, inside fo a function
+
 
 export function toggleTaskAndImgCont() {
 
@@ -16,3 +17,7 @@ export function toggleTaskAndImgCont() {
 export function getLastInputElemFromClassList() {
     return listOfTextInputClasses[listOfTextInputClasses.length - 1];
 }
+
+
+
+

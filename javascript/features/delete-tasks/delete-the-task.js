@@ -1,4 +1,4 @@
-import { tasksAddedObj, tasksShown } from "../add-tasks.js";
+import { tasksCreatedObj } from "../add-tasks.js";
 import { tasksCont, toggleTaskAndImgCont, listOfTextInputClasses } from "../../utils.js";
 import { highlightAllTasks, clickedTask, clickedTaskInput, showModal } from "./show-modal.js";
 import { handleModalResponse } from "./handle-modal-response.js";
@@ -9,7 +9,7 @@ export const dialog = document.querySelector(".dialog");
 export function checkWhetherAtaskCanBeDeleted() {
 
     //? checking if tasks count = 0 AND if the first input element is empty
-    if (tasksAddedObj.task === 0 && listOfTextInputClasses[0].value === "") {
+    if (tasksCreatedObj.task === 0 && listOfTextInputClasses[0].value === "") {
         alert("There are no tasks to delete yet.");
     } else {
         highlightAllTasks();
@@ -29,7 +29,6 @@ export function deleteATask() {
     if (taskContainers.length === 1) {
         clickedTaskInput.value = "";
         toggleTaskAndImgCont();
-        tasksShown.x = false;
     } else {
         clickedTask.remove(); //removal of the user-selected elem from the DOM
     }

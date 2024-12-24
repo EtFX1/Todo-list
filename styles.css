@@ -80,6 +80,11 @@ main {
     padding: 3.5px 2px 0 0;
 }
 
+.first-add-btn-cont,
+.first-add-btn {
+    cursor: pointer;
+}
+
 .first-add-btn:hover .first-add-icon {
     fill: green;
 }
@@ -129,13 +134,15 @@ header {
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
 }
 
-/* *? hide the default html checkbox */
+/* *? hide and position the default html checkbox */
+
 .checkbox {
-    position: absolute;
+    position: sticky;
     z-index: 0;
-    width: 1.25rem;
-    height: 1.4em;
-    opacity: 0;
+    width: 2rem;
+    height: 1.6rem;
+    /* opacity: 0; */
+    margin: 8px auto 0;
 }
 
 /* *?align the checkbox and text input vertically inside of the text container */

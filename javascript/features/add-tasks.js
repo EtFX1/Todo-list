@@ -1,57 +1,42 @@
 import {
     tasksCont,
-    toggleTaskAndImgCont,
-    getLastInputElemFromClassList
+    getLastInputElemFromClassList,
 } from "../utils.js";
 
-
-export let tasksAddedObj = { task: 0 };
-export let tasksShown = { x: false };
+import { addFocusEventListenersToInputs } from "../features/track-tasks/track-tasks-created.js";
 
 
-export function showTasksOrAddTask() {
-    if (tasksShown.x) {
-        checkWhetherAtaskCanBeAdded();
-    } else {
-        toggleTaskAndImgCont();
-        tasksShown.x = true;
-    }
-}
+export let tasksCreatedObj = { task: 0 };
 
-function checkWhetherAtaskCanBeAdded() {
+export function checkWhetherAtaskCanBeAdded() {
     if (getLastInputElemFromClassList().value === "") {
         alert("You must add something to the previous task first!");
     } else {
         addNewTask();
+        addFocusEventListenersToInputs();
     }
 }
-
 
 function addNewTask() {
-    tasksAddedObj.task += 1;
 
-    //?checks whether the board is full (i.e has 8 tasks) before it adds new input textbox
-    if (tasksAddedObj.task === 7) {
-        alert("Sorry you can't add more than 7 tasks!");
-    } else {
-        //create new task 
+    //create new task 
+    cloneTaskElem();
 
+
+    function cloneTaskElem() {
         const listElem = document.querySelector(".single-task-cont");
         const clonedListElem = listElem.cloneNode(true); //clones the LIST element
-
         tasksCont.append(clonedListElem); //adding the cloned element to the DOM
 
-        getNewTaskReadyForDisplay();
+        getNewTaskReadyForDisplay(clonedListElem);
 
-        function getNewTaskReadyForDisplay() {
-            clonedListElem.firstElementChild.checked = false; //removing the "checked state" of the newly created task if it has one
+    }
+    function getNewTaskReadyForDisplay(clonedElem) {
+        clonedElem.firstElementChild.checked = false; //removing the "checked state" of the newly created task if it has one
 
-            getLastInputElemFromClassList().value = ""; //clearing the input of the next task element
+        getLastInputElemFromClassList().value = ""; //clearing the input of the next task element
 
-            getLastInputElemFromClassList().focus(); //switching the focus from the previous element to to this newly cloned list element
-        }
 
     }
 }
-
 
