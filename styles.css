@@ -105,7 +105,7 @@ header {
 }
 
 .heading {
-    font-size: clamp(1.75rem, 11.282vw + -0.506rem, 3.125rem);
+    font-size: clamp(1.25rem, 15.385vw + -1.827rem, 3.125rem);
 }
 
 .no-task-yet-img {
@@ -129,7 +129,7 @@ header {
     margin: 0;
 }
 
-.tasks-cont > .single-task-cont {
+.single-task-cont {
     list-style-type: none;
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
 }
@@ -182,8 +182,8 @@ header {
 .text-input {
     border: none;
     background-color: transparent;
-    font-size: clamp(1.313rem, 6.667vw + -0.021rem, 2.063rem);
-    padding-top: 0.5rem;
+    font-size: clamp(1rem, 8.718vw + -0.744rem, 2.063rem);
+    padding-top: 0.25rem;
 }
 
 .text-input:focus {
