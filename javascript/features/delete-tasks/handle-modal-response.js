@@ -1,4 +1,4 @@
-import { tasksChecked, tasksCheckedElem } from "../track-tasks/track-checked-tasks.js";
+import { decrementTasksChecked, decrementTasksCreated } from "../track-tasks/decrement-tasks.js";
 import { deleteATask } from "./delete-the-task.js";
 import { toggleDisabledOnCheckboxes, toggleDisabledOnDeleteBtn, toggleRedBorders } from "./toggle-functions.js"
 
@@ -9,7 +9,6 @@ export function handleModalResponse() {
     const yesBtn = document.querySelector(".yes-btn");
 
     //?removing the event listeners so that they don't stack up each time the yes or no btn is clicked
-
     yesBtn.removeEventListener("click", handleYesBtnClick);
     yesBtn.addEventListener("click", handleYesBtnClick);
 
@@ -20,9 +19,10 @@ export function handleModalResponse() {
 function handleYesBtnClick() {
     toggleRedBorders();
     deleteATask();
-    decrementTasksChecked();
     toggleDisabledOnCheckboxes();
     toggleDisabledOnDeleteBtn();
+    decrementTasksChecked();
+    decrementTasksCreated();
 }
 
 function handleNoBtnClick() {
@@ -30,12 +30,4 @@ function handleNoBtnClick() {
     toggleDisabledOnDeleteBtn();
     toggleDisabledOnCheckboxes();
     dialog.close();
-}
-
-//reduces the number of tasks checked by 1
-function decrementTasksChecked() {
-    if (tasksChecked.num > 0) {
-        tasksChecked.num -= 1;
-        tasksCheckedElem.innerText = tasksChecked.num;
-    };
 }
