@@ -4,7 +4,6 @@
     color: white;
     letter-spacing: 0.1094rem;
 }
-
 .text-input::placeholder {
     letter-spacing: 0;
 }
@@ -38,14 +37,15 @@ main {
 
 .board-cont {
     position: relative;
-    width: clamp(16.75rem, 70%, 22.5rem);
+    width: 100%;
+    max-width: 31.25rem;
 }
 
 .board-img {
     width: 100%;
 }
 
-.all-content-cont {
+.board-content {
     position: absolute;
     width: fit-content;
     text-align: center;
@@ -61,12 +61,51 @@ main {
     margin-top: 20%;
 }
 
+.first-add-btn-cont {
+    display: inline-flex;
+    align-items: center;
+    border: 0.2188rem solid white;
+    width: 8.125rem;
+    height: 2.5rem;
+    margin-top: clamp(1rem, 5%, 1.5625rem);
+}
+
+.first-add-btn {
+    border-radius: 0;
+    border: 0.5px solid white;
+    outline: 0;
+    background-color: white;
+    width: 2.4375rem;
+    height: 2.4375rem;
+    padding: 0.2188rem 0.125rem 0 0;
+}
+
+.first-add-btn-cont,
+.first-add-btn {
+    cursor: pointer;
+}
+
+.first-add-btn:hover .first-add-icon {
+    fill: green;
+}
+
+.add-one {
+    font-size: 1.125rem;
+    padding-top: 0.125rem;
+    margin-left: 0.5rem;
+}
+
+.first-add-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 header {
     margin-bottom: 5%;
 }
 
 .heading {
-    font-size: clamp(1.75rem, 5.634vw + 0.436rem, 2.313rem);
+    font-size: clamp(2rem, 10vw + 0rem, 3.125rem);
 }
 
 .no-task-yet-img {
@@ -75,7 +114,13 @@ header {
 }
 
 .no-tasks-text {
-    font-size: clamp(1.5rem, 3.756vw + 0.749rem, 2rem);
+    margin: 1rem 0 0;
+    font-size: clamp(1.5rem, 6.154vw + 0.269rem, 2.25rem);
+}
+
+.tasks-cont {
+    height: clamp(15.625rem, 87.179vw + -1.811rem, 26.25rem);
+    overflow-y: scroll;
 }
 
 .tasks-cont,
@@ -89,36 +134,47 @@ header {
     line-height: clamp(1.4rem, 7.887vw + -0.177rem, 2.45rem);
 }
 
-/* *? remove fake checkbox */
+/* *? hide and position the default html checkbox */
 .checkbox {
-    position: absolute;
     z-index: 0;
-    width: 1.25rem;
-    height: 1.4em;
+    width: 2rem;
+    height: 1.6rem;
     opacity: 0;
+    margin: 0.5rem auto 0;
+    cursor: pointer;
+    position: absolute;
 }
 
-/* *?align items vertically inside of the text container */
-.checkbox + .text-cont {
-    display: inline-flex; /*todo: figure out what that is*/
+/* *?align the checkbox and text input vertically inside of the text container */
+.text-cont {
+    display: inline-flex; /*allows the container to work like an inline element, so it doesn't take the whole width of the page*/
     align-items: center;
 }
 
-/* ?create a fake checkbox next to input textbox to replace the default one */
-.checkbox + .text-cont::before {
+/* ?create a element that looks like a textbox, next to input textbox to replace the default one */
+.text-cont::before {
     content: "";
     display: inline-block;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.0625rem;
+    height: 1.0625rem;
     flex-shrink: 0;
     flex-grow: 0;
     border: 0.15rem solid white;
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
 }
 
+@media (min-width: 32.25rem) {
+    .checkbox + .text-cont::before {
+        width: 1.5625rem;
+        height: 1.5625rem;
+        border: 0.1875rem solid;
+    }
+}
+
+/*only in the checked state of the default textbox will the background image be displayed */
 .checkbox:checked + .text-cont::before {
     background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.75 5.33333L0 8L8.25 16L22 2.66667L19.25 0L8.25 10.6667L2.75 5.33333Z' fill='white'/%3E%3C/svg%3E%0A");
 }
@@ -126,8 +182,8 @@ header {
 .text-input {
     border: none;
     background-color: transparent;
-    font-size: clamp(1rem, 3.756vw + 0.249rem, 1.5rem);
-    padding-top: 0.1875rem;
+    font-size: clamp(1.313rem, 6.667vw + -0.021rem, 2.063rem);
+    padding-top: 0.5rem;
 }
 
 .text-input:focus {
@@ -137,25 +193,36 @@ header {
 
 /*initially off*/
 .red-border {
-    border: 0.125rem dashed red;
+    border: 0.1875rem dashed red;
 }
 
 .btns-cont {
-    position: absolute;
-    width: 100%;
+    margin-top: clamp(0.25rem, 6.154vw + -0.981rem, 1rem);
     display: flex;
     justify-content: end;
-    top: 81%;
+    width: 100%;
 }
 
 .add-btn,
 .delete-btn {
     padding: 0;
     color: white;
-    border: 0.1rem solid;
-    width: clamp(1.5rem, 6.25vw, 1.75rem);
-    height: clamp(1.5rem, 6.25vw, 1.75rem);
+    border: 0.125rem solid;
+    width: clamp(1.75rem, 4.103vw + 0.929rem, 2.25rem);
+    height: clamp(1.75rem, 4.103vw + 0.929rem, 2.25rem);
     background-color: transparent;
+}
+
+.add-btn:hover {
+    background-color: rgb(24, 132, 24);
+}
+
+.delete-btn {
+    margin-left: 0.75rem;
+}
+
+.delete-btn:hover {
+    background-color: rgb(238, 62, 62);
 }
 
 .add-icon,
@@ -179,11 +246,6 @@ header {
 
 .delete-icon-grey {
     fill: grey;
-}
-
-.delete-btn {
-    margin-left: 0.5rem;
-    margin-right: 13.75%;
 }
 
 .dialog {

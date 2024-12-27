@@ -1,4 +1,5 @@
-//!UTILITY MODULE. DO NOT IMPORT ANYTHING IN HERE
+import { allTextBoxes } from "../../utils.js"
+
 //disables/enables the checkboxes
 export function toggleDisabledOnCheckboxes() {
     const allCheckBoxes = document.querySelectorAll(".checkbox"); //returns a node list of all text inputs 
@@ -22,9 +23,8 @@ export function toggleDisabledOnDeleteBtn() {
 
 //highlights the border of a task
 export function toggleRedBorders() {
-    const allTextBoxes = document.querySelectorAll(".text-input"); //returns a node list of all text inputs 
     //highlights all textboxes
-    allTextBoxes.forEach(function (inputElem) {
+    allTextBoxes().forEach(function (inputElem) {
         inputElem.classList.toggle("red-border");
     });
 }

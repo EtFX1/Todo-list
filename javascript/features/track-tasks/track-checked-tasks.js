@@ -3,7 +3,6 @@ export let tasksChecked = { num: 0 };
 
 //?event delegation to add this event handler to every checkbox on the page (instead of a for loop)
 export function handleTaskTracking(event) {
-
     if (event.target.className === "checkbox") {
         trackTasks(event);
     }
