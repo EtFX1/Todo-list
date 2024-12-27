@@ -7,23 +7,22 @@ const updateInnerText = () => tasksAddedElem.innerText = numOfTasksAdded;
 export function addFocusEventListenersToInputs() {
 
     allTextBoxes().forEach((inputTextbox) => {
-        inputTextbox.removeEventListener("focusin", focusIn);
-        inputTextbox.addEventListener("focusin", focusIn);
-        inputTextbox.removeEventListener("focusout", focusOut);
-        inputTextbox.addEventListener("focusout", focusOut);
+        inputTextbox.removeEventListener("focusin", updateWhenFocused);
+        inputTextbox.addEventListener("focusin", updateWhenFocused);
+        inputTextbox.removeEventListener("focusout", decrementWhenUnfocused);
+        inputTextbox.addEventListener("focusout", decrementWhenUnfocused);
     });
 
-    //? if there's a task already added in there (input.value !== ""), then you can't add another task in there
-    function focusIn(event) {
-
+    //? if there's no text in the textbox when user focuses into it, then "numOfTasksAdded" is incremented by 1
+    function updateWhenFocused(event) {
         if (event.target.value === "") {
             numOfTasksAdded += 1;
             updateInnerText();
         }
     }
 
-    //? if the user hasn't truly added a task after focusing out, then the number of tasks isn't incremented
-    function focusOut(event) {
+    //? if there's no text in the textbox when user focuses out of it, then "numOfTasksAdded" is decremented by 1
+    function decrementWhenUnfocused(event) {
         if (event.target.value === "") {
             numOfTasksAdded -= 1;
             updateInnerText();
