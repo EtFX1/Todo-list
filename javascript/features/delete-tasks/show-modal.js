@@ -1,6 +1,4 @@
-import { dialog } from "./delete-the-task.js";
-import { tasksCont } from "../../utils.js";
-
+import { dialog } from "../../utils.js";
 //allows users to select what task they should delete
 
 export let clickedTask = null;
