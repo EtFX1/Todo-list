@@ -1,10 +1,11 @@
 import { tasksCreatedObj } from "../add-tasks.js";
 import { tasksCont, toggleTaskAndImgCont, listOfTextInputClasses } from "../../utils.js";
-import { highlightAllTasks, clickedTask, clickedTaskInput, showModal } from "./show-modal.js";
+import { clickedTask, clickedTaskInput, showModal } from "./show-modal.js";
+import { highlightAllTasks } from "./highlight-tasks.js";
 import { handleModalResponse } from "./handle-modal-response.js";
 import { toggleDisabledOnCheckboxes, toggleDisabledOnDeleteBtn } from "./toggle-functions.js";
+import { dialog } from "../../utils.js";
 
-export const dialog = document.querySelector(".dialog");
 
 export function checkWhetherAtaskCanBeDeleted() {
 
@@ -13,10 +14,9 @@ export function checkWhetherAtaskCanBeDeleted() {
         alert("There are no tasks to delete yet.");
     } else {
         highlightAllTasks();
-
         toggleDisabledOnCheckboxes();
         toggleDisabledOnDeleteBtn();
-
+        tasksCont.addEventListener("click", showModal);
         handleModalResponse();
     }
 }

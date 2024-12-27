@@ -9,7 +9,7 @@ import {
 
 import { handleTaskTracking } from "./features/track-tasks/track-checked-tasks.js";
 
-import { addFocusEventListenersToInputs } from "./features/track-tasks/track-tasks-created.js";
+import { addFocusEventListenersToInputs } from "./features/track-tasks/track-created-tasks.js";
 
 import { checkWhetherAtaskCanBeDeleted } from "./features/delete-tasks/delete-the-task.js";
 

@@ -3,7 +3,7 @@ import {
     getLastInputElemFromClassList,
 } from "../utils.js";
 
-import { addFocusEventListenersToInputs } from "../features/track-tasks/track-tasks-created.js";
+import { addFocusEventListenersToInputs } from "./track-tasks/track-created-tasks.js";
 
 
 export let tasksCreatedObj = { task: 0 };

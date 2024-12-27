@@ -3,6 +3,7 @@ export const listOfTextInputClasses = document.getElementsByClassName("text-inpu
 export const allTextBoxes = () => document.querySelectorAll(".text-input"); //returns 
 //? made into a function because the code inside needs to be run locally, inside fo a function
 
+export const dialog = document.querySelector(".dialog");
 
 export function toggleTaskAndImgCont() {
 
