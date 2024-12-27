@@ -105,7 +105,7 @@ header {
 }
 
 .heading {
-    font-size: clamp(2rem, 10vw + 0rem, 3.125rem);
+    font-size: clamp(1.75rem, 11.282vw + -0.506rem, 3.125rem);
 }
 
 .no-task-yet-img {
