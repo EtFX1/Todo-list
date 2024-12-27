@@ -152,7 +152,7 @@ header {
 }
 
 /* ?create a element that looks like a textbox, next to input textbox to replace the default one */
-.checkbox + .text-cont::before {
+.text-cont::before {
     content: "";
     display: inline-block;
     width: 17px;
@@ -193,7 +193,7 @@ header {
 
 /*initially off*/
 .red-border {
-    outline: 3px dashed red;
+    border: 3px dashed red;
 }
 
 .btns-cont {
