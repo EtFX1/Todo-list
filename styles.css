@@ -135,23 +135,23 @@ header {
 }
 
 /* *? hide and position the default html checkbox */
-
 .checkbox {
-    position: sticky;
     z-index: 0;
     width: 2rem;
     height: 1.6rem;
-    /* opacity: 0; */
+    opacity: 0;
     margin: 8px auto 0;
+    cursor: pointer;
+    position: absolute;
 }
 
 /* *?align the checkbox and text input vertically inside of the text container */
 .text-cont {
-    display: inline-flex;
+    display: inline-flex; /*allows the container to work like an inline element, so it doesn't take the whole width*/
     align-items: center;
 }
 
-/* ?create a fake checkbox next to input textbox to replace the default one */
+/* ?create a element that looks like a textbox, next to input textbox to replace the default one */
 .checkbox + .text-cont::before {
     content: "";
     display: inline-block;
