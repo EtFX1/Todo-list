@@ -72,7 +72,7 @@ main {
 
 .first-add-btn {
     border-radius: 0;
-    border: 0.5px solid white;
+    border: 0.0313rem solid white;
     outline: 0;
     background-color: white;
     width: 2.4375rem;
@@ -183,6 +183,7 @@ header {
     border: none;
     background-color: transparent;
     font-size: clamp(1rem, 8.718vw + -0.744rem, 2.063rem);
+    padding-top: 0.5rem;
 }
 
 .text-input:focus {
