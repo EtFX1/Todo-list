@@ -36,6 +36,7 @@ function addNewTask() {
 
         getLastInputElemFromClassList().value = ""; //clearing the input of the next task element
 
+        clonedElem.scrollIntoView(); //making sure that the last list element is scrolled into view
 
     }
 }

@@ -38,7 +38,7 @@ main {
 .board-cont {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 31.25rem;
 }
 
 .board-img {
@@ -64,10 +64,10 @@ main {
 .first-add-btn-cont {
     display: inline-flex;
     align-items: center;
-    border: 3.5px solid white;
-    width: 130px;
-    height: 40px;
-    margin-top: clamp(16px, 5%, 25px);
+    border: 0.2188rem solid white;
+    width: 8.125rem;
+    height: 2.5rem;
+    margin-top: clamp(1rem, 5%, 1.5625rem);
 }
 
 .first-add-btn {
@@ -75,9 +75,9 @@ main {
     border: 0.5px solid white;
     outline: 0;
     background-color: white;
-    width: 39px;
-    height: 39px;
-    padding: 3.5px 2px 0 0;
+    width: 2.4375rem;
+    height: 2.4375rem;
+    padding: 0.2188rem 0.125rem 0 0;
 }
 
 .first-add-btn-cont,
@@ -90,14 +90,14 @@ main {
 }
 
 .add-one {
-    font-size: 18px;
-    padding-top: 2px;
-    margin-left: 8px;
+    font-size: 1.125rem;
+    padding-top: 0.125rem;
+    margin-left: 0.5rem;
 }
 
 .first-add-icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 header {
@@ -114,7 +114,7 @@ header {
 }
 
 .no-tasks-text {
-    margin: 16px 0 0;
+    margin: 1rem 0 0;
     font-size: clamp(1.5rem, 6.154vw + 0.269rem, 2.25rem);
 }
 
@@ -140,14 +140,14 @@ header {
     width: 2rem;
     height: 1.6rem;
     opacity: 0;
-    margin: 8px auto 0;
+    margin: 0.5rem auto 0;
     cursor: pointer;
     position: absolute;
 }
 
 /* *?align the checkbox and text input vertically inside of the text container */
 .text-cont {
-    display: inline-flex; /*allows the container to work like an inline element, so it doesn't take the whole width*/
+    display: inline-flex; /*allows the container to work like an inline element, so it doesn't take the whole width of the page*/
     align-items: center;
 }
 
@@ -155,22 +155,22 @@ header {
 .text-cont::before {
     content: "";
     display: inline-block;
-    width: 17px;
-    height: 17px;
+    width: 1.0625rem;
+    height: 1.0625rem;
     flex-shrink: 0;
     flex-grow: 0;
     border: 0.15rem solid white;
-    margin-right: 8px;
+    margin-right: 0.5rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
 }
 
-@media (min-width: 516px) {
+@media (min-width: 32.25rem) {
     .checkbox + .text-cont::before {
-        width: 25px;
-        height: 25px;
-        border: 3px solid;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        border: 0.1875rem solid;
     }
 }
 
@@ -183,7 +183,7 @@ header {
     border: none;
     background-color: transparent;
     font-size: clamp(1.313rem, 6.667vw + -0.021rem, 2.063rem);
-    padding-top: 8px;
+    padding-top: 0.5rem;
 }
 
 .text-input:focus {
@@ -193,7 +193,7 @@ header {
 
 /*initially off*/
 .red-border {
-    border: 3px dashed red;
+    border: 0.1875rem dashed red;
 }
 
 .btns-cont {
@@ -207,7 +207,7 @@ header {
 .delete-btn {
     padding: 0;
     color: white;
-    border: 2px solid;
+    border: 0.125rem solid;
     width: clamp(1.75rem, 4.103vw + 0.929rem, 2.25rem);
     height: clamp(1.75rem, 4.103vw + 0.929rem, 2.25rem);
     background-color: transparent;
@@ -218,7 +218,7 @@ header {
 }
 
 .delete-btn {
-    margin-left: 12px;
+    margin-left: 0.75rem;
 }
 
 .delete-btn:hover {
