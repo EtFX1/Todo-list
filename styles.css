@@ -183,7 +183,6 @@ header {
     border: none;
     background-color: transparent;
     font-size: clamp(1rem, 8.718vw + -0.744rem, 2.063rem);
-    padding-top: 0.25rem;
 }
 
 .text-input:focus {
