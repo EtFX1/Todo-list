@@ -9,7 +9,6 @@ export function highlightAllTasks() {
     tasksCont.addEventListener("mouseover", function (event) {
         let clickedInputElem = event.target;
         if (clickedInputElem.tagName === "INPUT") {
-            clickedInputElem.style.cursor = "pointer";
             clickedInputElem.removeEventListener("focusin", updateWhenFocused);
         }
     });

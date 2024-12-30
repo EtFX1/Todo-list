@@ -194,6 +194,7 @@ header {
 /*initially off*/
 .red-border {
     border: 0.1875rem dashed red;
+    cursor: pointer;
 }
 
 .btns-cont {
@@ -213,16 +214,18 @@ header {
     background-color: transparent;
 }
 
-.add-btn:hover {
-    background-color: rgb(24, 132, 24);
+@media (min-width: 800px) {
+    .add-btn:hover {
+        background-color: rgb(24, 132, 24);
+    }
+
+    .delete-btn:hover {
+        background-color: rgb(238, 62, 62);
+    }
 }
 
 .delete-btn {
     margin-left: 0.75rem;
-}
-
-.delete-btn:hover {
-    background-color: rgb(238, 62, 62);
 }
 
 .add-icon,
