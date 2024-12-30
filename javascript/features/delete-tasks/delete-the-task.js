@@ -3,19 +3,18 @@ import { tasksCont, toggleTaskAndImgCont, listOfTextInputClasses } from "../../u
 import { clickedTask, clickedTaskInput, showModal } from "./show-modal.js";
 import { highlightAllTasks } from "./highlight-tasks.js";
 import { handleModalResponse } from "./handle-modal-response.js";
-import { toggleDisabledOnCheckboxes, toggleDisabledOnDeleteBtn } from "./toggle-functions.js";
+import { toggleDisabledOnCheckboxes } from "./toggle-functions.js";
 import { dialog } from "../../utils.js";
 
 
 export function checkWhetherAtaskCanBeDeleted() {
-
     //? checking if tasks count = 0 AND if the first input element is empty
     if (tasksCreatedObj.task === 0 && listOfTextInputClasses[0].value === "") {
         alert("There are no tasks to delete yet.");
     } else {
         highlightAllTasks();
         toggleDisabledOnCheckboxes();
-        toggleDisabledOnDeleteBtn();
+        // toggleDisabledOnDeleteBtn();
         tasksCont.addEventListener("click", showModal);
         handleModalResponse();
     }
