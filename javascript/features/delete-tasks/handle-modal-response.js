@@ -1,6 +1,6 @@
 import { decrementTasksChecked, decrementTasksCreated } from "../track-tasks/decrement-tasks.js";
 import { deleteATask } from "./delete-the-task.js";
-import { toggleDisabledOnCheckboxes, toggleDisabledOnDeleteBtn, toggleRedBorders } from "./toggle-functions.js";
+import { toggleDisabledOnCheckboxes, toggleRedBorders } from "./toggle-functions.js";
 import { dialog } from "../../utils.js";
 
 //shows a modal to allow the user confirm whether a task should be deleted
@@ -21,14 +21,14 @@ function handleYesBtnClick() {
     toggleRedBorders();
     deleteATask();
     toggleDisabledOnCheckboxes();
-    toggleDisabledOnDeleteBtn();
+    // toggleDisabledOnDeleteBtn();
     decrementTasksChecked();
     decrementTasksCreated();
 }
 
 function handleNoBtnClick() {
     toggleRedBorders();
-    toggleDisabledOnDeleteBtn();
+    // toggleDisabledOnDeleteBtn();
     toggleDisabledOnCheckboxes();
     dialog.close();
 }

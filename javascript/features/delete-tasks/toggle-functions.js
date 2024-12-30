@@ -10,16 +10,16 @@ export function toggleDisabledOnCheckboxes() {
 }
 
 //disables/enables the delete button 
-export function toggleDisabledOnDeleteBtn() {
-    const deleteBtn = document.querySelector(".delete-btn");
-    const deleteIcon = document.querySelector(".delete-icon");
+// export function toggleDisabledOnDeleteBtn() {
+//     const deleteBtn = document.querySelector(".delete-btn");
+//     const deleteIcon = document.querySelector(".delete-icon");
 
-    deleteBtn.disabled = !deleteBtn.disabled;
+//     deleteBtn.disabled = !deleteBtn.disabled;
 
-    //changes the icons color to grey
-    deleteBtn.classList.toggle("delete-btn-grey");
-    deleteIcon.classList.toggle("delete-icon-grey");
-}
+//     //changes the icons color to grey
+//     deleteBtn.classList.toggle("delete-btn-grey");
+//     deleteIcon.classList.toggle("delete-icon-grey");
+// }
 
 //highlights the border of a task
 export function toggleRedBorders() {
