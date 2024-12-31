@@ -142,7 +142,8 @@ header {
     opacity: 0;
     margin: 0.5rem auto 0;
     cursor: pointer;
-    position: absolute;
+    position: sticky;
+    left: 40px;
 }
 
 /* *?align the checkbox and text input vertically inside of the text container */
