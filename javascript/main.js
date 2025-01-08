@@ -4,7 +4,7 @@ import {
 } from "./utils.js"
 
 import {
-    checkWhetherAtaskCanBeAdded
+    addNewTask
 } from "./features/add-tasks.js";
 
 import { handleTaskTracking } from "./features/track-tasks/track-checked-tasks.js";
@@ -20,11 +20,11 @@ const firstAddBtn = document.querySelector(".first-add-btn-cont");
 
 firstAddBtn.addEventListener("click", function () {
     addFocusEventListenersToInputs();
-
-    toggleTaskAndImgCont()
+    toggleTaskAndImgCont();
+    addNewTask();
 });
 
-addBtn.addEventListener("click", checkWhetherAtaskCanBeAdded);
+addBtn.addEventListener("click", addNewTask);
 
 //fires when the checkbox is clicked
 tasksCont.addEventListener("change", handleTaskTracking);
