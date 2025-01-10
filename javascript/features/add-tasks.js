@@ -8,6 +8,7 @@ import { addFocusEventListenersToInputs } from "./track-tasks/track-created-task
 
 export let tasksCreatedObj = { task: 0 }
 
+
 export function checkWhetherAtaskCanBeAdded() {
     if (getLastInputElemFromClassList().value === "") {
         alert("You must add something to the previous task first!");
@@ -39,5 +40,5 @@ function addNewTask() {
         clonedElem.scrollIntoView(); //making sure that the last list element is scrolled into view
 
     }
-}
+
 
