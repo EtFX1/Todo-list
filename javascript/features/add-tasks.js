@@ -34,7 +34,7 @@ function addNewTask() {
     function getNewTaskReadyForDisplay(clonedElem) {
         clonedElem.firstElementChild.checked = false; //removing the "checked state" of the newly created task if it has one
 
-        getLastInputElemFromClassList().value = ""; //clearing the input of the next task element
+        getLastInputElemFromClassList().value = ""; //  Clearing the input of the next task element
 
         clonedElem.scrollIntoView(); //making sure that the last list element is scrolled into view
 
