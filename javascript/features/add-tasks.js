@@ -6,7 +6,7 @@ import {
 import { addFocusEventListenersToInputs } from "./track-tasks/track-created-tasks.js";
 
 
-export let tasksCreatedObj = { task: 0 };
+export let tasksCreatedObj = { task: 0 }
 
 export function checkWhetherAtaskCanBeAdded() {
     if (getLastInputElemFromClassList().value === "") {
