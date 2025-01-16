@@ -18,7 +18,7 @@ export function checkWhetherAtaskCanBeAdded() {
     }
 }
 
-function addNewTask() {
+export function addNewTask() {
 
     //create new task 
     cloneTaskElem();
@@ -26,6 +26,7 @@ function addNewTask() {
 
     function cloneTaskElem() {
         const listElem = document.querySelector(".single-task-cont");
+        console.log(listElem);
         const clonedListElem = listElem.cloneNode(true); //clones the LIST element
         tasksCont.append(clonedListElem); //adding the cloned element to the DOM
 
@@ -41,4 +42,4 @@ function addNewTask() {
 
     }
 
-
+}
